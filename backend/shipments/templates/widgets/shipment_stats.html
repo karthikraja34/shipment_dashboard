@@ -1,0 +1,45 @@
+<div class="p-4 pt-2">
+    <div class="border-b border-gray-200 py-2">
+        <h4 class="text-base text-gray-500">{{ title }}</h4>
+    </div>
+    <div>
+        <dl class="mt-5">
+                        <div class="px-4 py-5 sm:p-6">
+                <dt class="text-base font-normal text-gray-500">Reference Number</dt>
+                <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
+                    <div class="flex items-baseline text-2xl font-semibold text-gray-900">
+                        {{ shipment.reference_id }}
+                    </div>
+                </dd>
+            </div>
+            <div class="px-4 py-5 sm:p-6">
+                <dt class="text-base font-normal text-gray-500">Shipment to</dt>
+                <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
+                    <div class="flex items-baseline text-2xl font-semibold text-gray-900">
+                        {{ shipment.user.company.name }}
+                    </div>
+                </dd>
+            </div>
+
+            <div class="px-4 py-5 sm:p-6">
+                <dt class="text-base font-normal text-gray-500">Shipped on</dt>
+                <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
+                    <div class="flex items-baseline text-2xl font-semibold text-gray-900">
+                        {{ shipment.shipped_date}}
+                    </div>
+
+                </dd>
+            </div>
+
+            <div class="px-4 py-5 sm:p-6">
+                <dt class="text-base font-normal text-gray-500">Status</dt>
+                <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
+                    <div class="flex items-baseline text-2xl font-semibold text-gray-900">
+                        {{ shipment.status|capfirst }}
+                    </div>
+
+                </dd>
+            </div>
+        </dl>
+    </div>
+</div>

@@ -133,3 +133,33 @@ AUTH_USER_MODEL = "users.User"
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+DASHBOARD_SETTINGS = {
+    "pending": {
+        "widgets": [
+            {"title": "Products", "template": "product_chart"},
+            {"title": "Product Prices", "template": "product_prices"},
+        ]
+    },
+    "shipped": {
+        "widgets": [
+            {"title": "Products", "template": "product_chart"},
+            {"title": "Product Prices", "template": "product_prices"},
+            {"title": "Shipment Info", "template": "shipment_stats"},
+            {"title": "Status", "template": "shipment_progress"},
+        ]
+    },
+    "delivered": {
+        "widgets": [
+            {"title": "Products", "template": "product_chart"},
+            {"title": "Product Prices", "template": "product_prices"},
+            {"title": "Shipment Info", "template": "shipment_stats"},
+        ]
+    },
+    "default": {
+        "widgets": [
+            {"title": "Products", "template": "product_chart"},
+            {"title": "Product Prices", "template": "product_prices"},
+        ]
+    },
+}

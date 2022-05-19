@@ -1,0 +1,24 @@
+<div class="p-4 pt-2">
+    <div class="border-b border-gray-200 py-2">
+        <h4 class="text-base text-gray-500">{{ title }}</h4>
+    </div>
+<div>
+  <div class="mt-6" aria-hidden="true">
+    <div class="bg-gray-200 rounded-full overflow-hidden">
+      <div class="h-2 bg-green-600 rounded-full" style="width: 66%"></div>
+    </div>
+    <div class="hidden sm:grid grid-cols-3 text-sm font-medium text-gray-600 mt-6">
+      <div class="text-indigo-600">
+          <p>Order Processed</p>
+          <p class="text-gray-600">{{ shipment.created|date:"M d, Y" }}</p>
+      </div>
+      <div class="text-indigo-600">
+          <p>Shipped</p>
+          <p class="text-gray-600">{{ shipment.shipped_date|date:"M d, Y" }}</p>
+      </div>
+      <div class="text-center">Delivered</div>
+    </div>
+  </div>
+</div>
+</div>
+

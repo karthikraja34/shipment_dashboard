@@ -30,7 +30,9 @@ class Shipment(TimeStampedModel):
 
 
 class ShipmentDetail(TimeStampedModel):
-    shipment = models.ForeignKey("shipments.Shipment", on_delete=models.CASCADE)
+    shipment = models.ForeignKey(
+        "shipments.Shipment", on_delete=models.CASCADE, related_name="shipment_details"
+    )
     product = models.ForeignKey("products.Product", on_delete=models.CASCADE)
     quantity = models.IntegerField("Quantity")
     price_per_unit = models.DecimalField(

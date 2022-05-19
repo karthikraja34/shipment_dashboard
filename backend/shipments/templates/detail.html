@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load config_tags %}
+{% block head %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+{% endblock %}
+
+{% block main %}
+    <div class="min-h-screen bg-gray-100 space-2">
+        <div class="container mx-auto pt-8">
+            <div class="grid grid-cols-3 wrap gap-8">
+                {% for template_config in config.widgets %}
+                    <div class="bg-white rounded-md">
+                        {% with template_name=template_config.template|add:".html" %}
+                            {% include "widgets/"|add:template_name with title=template_config.title data=config|get_item:template_config.template %}
+                        {% endwith %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
